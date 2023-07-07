@@ -42,6 +42,13 @@ class Canteen:
             else:
                  print("Snack not found in inventory.")     
     
-    
-                  
-                    
+    def display(self):
+        print("Snack Inventory:")
+        for snack in self.inventory:
+            print(f"ID: {snack.snack_id}\tName : {snack.name}\tprice : {snack.price}\tAvailable : {snack.available}")
+
+    def display_Sales(self):             
+        print("Sales Records:")
+        for snack in self.sales_records:
+            print(f"ID: {snack.snack_id}\tName: {snack.name}\tPrice: {snack.price}")
+
