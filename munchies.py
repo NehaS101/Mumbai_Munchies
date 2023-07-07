@@ -23,5 +23,25 @@ class Canteen:
 
     def update(self,snack_id,available):
         for snack in self.inventory:              
+            if snack.snack_id == snack.id:
+                snack.available = available
+                break
+            else:
+                print("Snack not found")
 
+    def recorder(self,snack_id):
+          for snack in self.inventory:
+            if snack.snack_id == snack_id:
+                if snack.available:
+                    self.sales_records.append(snack)
+                    snack.available = False
+                    print(f"Sale recorded for {snack.name}.")
+                else:
+                    print(f"{snack.name} is not available.")
+                break
+            else:
+                 print("Snack not found in inventory.")     
+    
+    
+                  
                     
